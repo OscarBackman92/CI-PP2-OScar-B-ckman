@@ -8,9 +8,19 @@
     box-sizing: border-box;
     font-family: 'jersey 10', sans-serif;
 }
+header img {
+    width: 275px;
+    margin-top: 20px;
+}
 
 body {
     background-color: rgb(6, 46, 97);
+    font-family: 'Jersey 10', sans-serif;
+    text-align: center;
+    color: #16074d;
+    background: url(../images/Helldivers_2_Background_image.jpeg) center center/cover no-repeat;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .app {
@@ -71,4 +81,12 @@ body {
     border-radius: 4px;
     cursor: pointer;
     display: none;
+}
+
+.correct {
+    background: green;
+}
+
+.incorrect {
+    background-color: red;
 }
