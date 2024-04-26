@@ -160,6 +160,8 @@ function startGame() {
     document.getElementById('start-btn').addEventListener('click', () => {
         document.getElementById('start-btn').style.display = 'none'; 
         document.getElementById("intro").style.display = "none";
+        document.getElementById("restart-btn").style.display = "none";
+        addRestartButton();
     });
 }
 
@@ -234,11 +236,9 @@ nextButton.addEventListener("click" ,()=>{
 })
 
 function addRestartButton() {
-    const restartButton = document.createElement("button");
-    restartButton.innerHTML = "Restart Quiz";
-    restartButton.classList.add("btn");
+    const restartButton = document.getElementById('restart-btn');
+    restartButton.style.display = 'block'; // Show the restart button
     restartButton.addEventListener("click", startGame);
-    document.querySelector(".app").appendChild(restartButton);
 }
 
 startGame();
