@@ -1,0 +1,10 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap');
+
+/* Asterisk wildcard selector to override default styles from browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'jersey 10', sans-serif;
+}
