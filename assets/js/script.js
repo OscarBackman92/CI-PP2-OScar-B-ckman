@@ -151,12 +151,17 @@ const nextButton = document.getElementById('next-btn');
 let currentQuestionIndex = 0;
 let score = 0;
 
-function startGame (){
+function startGame() {
     currentQuestionIndex = 0;
     score = 0;
-    nextButton.innerHTML = 'Next'
+    nextButton.innerHTML = 'Next';
     showQuestion();
+    document.getElementById('start-btn').style.display = 'block'; 
+    document.getElementById('start-btn').addEventListener('click', () => {
+        document.getElementById('start-btn').style.display = 'none'; 
+    });
 }
+
 
 function showQuestion() {
     resetState();
