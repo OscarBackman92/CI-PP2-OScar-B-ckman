@@ -212,8 +212,6 @@ function selectAnswer(event) {
 function showScore(){
     resetState();
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextButton.innerHTML = "Redeploy to Quiz?";
-    nextButton.style.display = "block";
     addRestartButton();
 }
 
