@@ -97,3 +97,11 @@ body {
 .incorrect {
     background-color: red;
 }
+
+/* media query for larger screens */
+@media screen and (min-width: 768px){
+    header img {
+        width: 512px;
+        height: 144px;
+    }
+}
