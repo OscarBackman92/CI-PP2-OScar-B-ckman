@@ -212,6 +212,7 @@ function showScore(){
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Redeploy to Quiz?";
     nextButton.style.display = "block";
+    addRestartButton();
 }
 
 
@@ -231,5 +232,13 @@ nextButton.addEventListener("click" ,()=>{
         startGame();
     }
 })
+
+function addRestartButton() {
+    const restartButton = document.createElement("button");
+    restartButton.innerHTML = "Restart Quiz";
+    restartButton.classList.add("btn");
+    restartButton.addEventListener("click", startGame);
+    document.querySelector(".app").appendChild(restartButton);
+}
 
 startGame();
