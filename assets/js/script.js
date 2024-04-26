@@ -159,6 +159,7 @@ function startGame() {
     document.getElementById('start-btn').style.display = 'block'; 
     document.getElementById('start-btn').addEventListener('click', () => {
         document.getElementById('start-btn').style.display = 'none'; 
+        document.getElementById("intro").style.display = "none";
     });
 }
 
