@@ -251,30 +251,39 @@ function displayQuestion() {
 function selectAnswer(event) {
     const selectedBtn = event.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
-  
+
+    console.log("Selected answer:", selectedBtn.textContent);
+    console.log("Is correct:", isCorrect);
+
     // Highlight the selected answer
     if (isCorrect) {
-      selectedBtn.classList.add("correct");
-      score++;
+        console.log("Selected answer is correct");
+        selectedBtn.classList.add("correct");
+        score++;
     } else {
-      selectedBtn.classList.add("incorrect");
-  
-      // Find and highlight the correct answer
-      Array.from(answerButtons.children).forEach((button) => {
-        if (button.dataset.correct === "true") {
-          button.classList.add("correct");
-        } else {
-          button.classList.add("incorrect");
-        }
-      });
+        console.log("Selected answer is incorrect");
+        selectedBtn.classList.add("incorrect");
+
+        // Find and highlight the correct answer
+        Array.from(answerButtons.children).forEach((button) => {
+            if (button.dataset.correct === "true") {
+                console.log("Correct answer:", button.textContent);
+                button.classList.add("correct");
+            } else {
+                console.log("Incorrect answer:", button.textContent);
+                button.classList.add("incorrect");
+            }
+        });
     }
-  
+
     // Disable all buttons after selection
+    console.log("Disabling all answer buttons");
     Array.from(answerButtons.children).forEach((button) => {
-      button.disabled = true;
+        button.disabled = true;
     });
-  
+
     // Enable the next button
+    console.log("Enabling the next button");
     nextButton.disabled = false;
     nextButton.style.display = "block";
-  }
+}
