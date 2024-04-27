@@ -32,13 +32,23 @@ body {
     padding: 10px;
 }
 #quiz-instructions {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     background: #ecd56f;
     width: 90%;
     max-width: 600px;
-    margin: 100px auto 0;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
+}
+#instructions {
+    list-style: none;
+    padding: 0;
+}
+
+#instructions ol {
+    margin-bottom: 10px;
 }
 
 .app {
