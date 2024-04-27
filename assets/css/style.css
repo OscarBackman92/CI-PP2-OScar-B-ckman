@@ -1,12 +1,12 @@
 /* Google font */
-@import url('https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 /* Asterisk wildcard selector to override default styles from browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Jersey 10', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 header img {
@@ -16,7 +16,7 @@ header img {
 
 body {
     background: rgb(6, 46, 97) url(../images/Helldivers_2_Background_image.jpeg) center center/cover no-repeat;
-    font-family: 'Jersey 10', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     text-align: center;
     color: #16074d;
     min-height: 100vh;
@@ -84,40 +84,17 @@ body {
     cursor: no-drop;
 }
 
-#next-btn {
+#next-btn, #start-btn, #restart-btn {
     background: #2c3e50;
     color: #ffffff;
     font-weight: bold;
     width: 150px;
     border: 0;
     padding: 10px;
-    margin: 20px 0 auto;
+    margin: 20px auto;
     border-radius: 4px;
     cursor: pointer;
-}
-
-#start-btn {
-    background: #2c3e50;
-    color: #ffffff;
-    font-weight: bold;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px 0 auto;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#restart-btn {
-    background: #2c3e50;
-    color: #ffffff;
-    font-weight: bold;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px 0 auto;
-    border-radius: 4px;
-    cursor: pointer;
+    display: block;
 }
 
 .correct {
