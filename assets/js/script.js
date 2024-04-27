@@ -1,177 +1,177 @@
 // 15 quiz questions
 
 const questions = [
-    {
-        question: "Main objective in Helldivers 2?",
-        answers: [
-            {
-                text: "Defend humanity by completing dangerous missions.",
-                correct: true,
-            },
-            {
-                text: "Establish diplomatic relations with alien species.",
-                correct: false,
-            },
-            { text: "Explore uncharted territories in space.", correct: false },
-            {
-                text: "Scavenge for resources on uninhabited planets.",
-                correct: false,
-            },
-        ],
-    },
-    {
-        question: "Main antagonists in Helldivers 2?",
-        answers: [
-            { text: "Zorblaxians - peaceful and diplomatic.", correct: false },
-            { text: "GalactiTrons - nomadic traders.", correct: false },
-            {
-                text: "Bugs, Cyborgs, and Illuminates - aggressive and formidable.",
-                correct: true,
-            },
-            { text: "OmniMechs - advanced artificial intelligence.", correct: false },
-        ],
-    },
-    {
-        question: "Organization in Helldivers 2?",
-        answers: [
-            { text: "United Space Explorers Alliance.", correct: false },
-            { text: "Intergalactic Peacekeepers Union.", correct: false },
-            { text: "Interstellar Trade Federation.", correct: false },
-            { text: "Super Earth's Helldivers.", correct: true },
-        ],
-    },
-    {
-        question: "Number of player classes in Helldivers 2?",
-        answers: [
-            { text: "2", correct: false },
-            { text: "4", correct: true },
-            { text: "5", correct: false },
-            { text: "7", correct: false },
-        ],
-    },
-    {
-        question: "Key differences between classes in Helldivers 2?",
-        answers: [
-            { text: "Unique abilities, weapons, and equipment.", correct: true },
-            { text: "Same weapons and abilities for all.", correct: false },
-            { text: "Only one class has heavy weaponry.", correct: false },
-            { text: "Classes differ only in appearance.", correct: false },
-        ],
-    },
-    {
-        question: "Type of randomly generated missions in Helldivers 2?",
-        answers: [
-            { text: "Dynamic missions with various objectives.", correct: true },
-            { text: "Story-based missions.", correct: false },
-            { text: "Side quests.", correct: false },
-            { text: "Escort missions.", correct: false },
-        ],
-    },
-    {
-        question: "Role of strategy in completing missions?",
-        answers: [
-            {
-                text: "Crucial for coordinating attacks and managing resources.",
-                correct: true,
-            },
-            { text: "Irrelevant; brute force always prevails.", correct: false },
-            { text: "Only matters in multiplayer.", correct: false },
-            { text: "Limited to choosing class.", correct: false },
-        ],
-    },
-    {
-        question: "How to unlock new weapons and equipment?",
-        answers: [
-            { text: "Earn experience points and level up.", correct: true },
-            { text: "Purchase with real money.", correct: false },
-            { text: "Complete achievements.", correct: false },
-            { text: "Find them scattered across the game world.", correct: false },
-        ],
-    },
-    {
-        question: "Consequences of friendly fire?",
-        answers: [
-            {
-                text: "Can injure or kill teammates, hindering mission progress.",
-                correct: true,
-            },
-            { text: "No consequences; friendly fire is disabled.", correct: false },
-            { text: "Only the damaged player suffers consequences.", correct: false },
-            { text: "Reduces the team's score.", correct: false },
-        ],
-    },
-    {
-        question: "Different environments in Helldivers 2?",
-        answers: [
-            { text: "Urban, desert, forest, and arctic.", correct: true },
-            { text: "Only urban environments.", correct: false },
-            { text: "Only desert environments.", correct: false },
-            { text: "Only jungle environments.", correct: false },
-        ],
-    },
-    {
-        question: "Importance of teamwork?",
-        answers: [
-            {
-                text: "Essential for coordinating attacks and reviving teammates.",
-                correct: true,
-            },
-            { text: "Optional; solo play is encouraged.", correct: false },
-            { text: "Necessary for certain missions only.", correct: false },
-            { text: "Affects mission completion time only.", correct: false },
-        ],
-    },
-    {
-        question: "How to call in reinforcements during missions?",
-        answers: [
-            {
-                text: "Request reinforcements using a special beacon item.",
-                correct: true,
-            },
-            {
-                text: "Reinforcements arrive automatically at set intervals.",
-                correct: false,
-            },
-            { text: "Call by finding special items on the map.", correct: false },
-            { text: "Summon by sacrificing resources.", correct: false },
-        ],
-    },
-    {
-        question: "Role of customizable Load-outs?",
-        answers: [
-            {
-                text: "Tailor equipment to suit different mission objectives and playstyles.",
-                correct: true,
-            },
-            { text: "Purely cosmetic.", correct: false },
-            { text: "Predetermined based on class selection.", correct: false },
-            { text: "Affects single-player mode only.", correct: false },
-        ],
-    },
-    {
-        question: "Significance of the 'Dive Hard' mechanic?",
-        answers: [
-            {
-                text: "Enables players to perform evasive maneuvers and dodge enemy attacks.",
-                correct: true,
-            },
-            { text: "Allows swimming underwater.", correct: false },
-            { text: "Reference to a popular action movie.", correct: false },
-            { text: "Grants temporary invincibility.", correct: false },
-        ],
-    },
-    {
-        question: "Additional challenges or modifiers in missions?",
-        answers: [
-            {
-                text: "Environmental hazards, enemy reinforcements, and mission-specific modifiers.",
-                correct: true,
-            },
-            { text: "No additional challenges or modifiers.", correct: false },
-            { text: "Weather conditions such as rain or snow.", correct: false },
-            { text: "Day and night cycles.", correct: false },
-        ],
-    },
+  {
+    question: "Main objective in Helldivers 2?",
+    answers: [
+      {
+        text: "Defend humanity by completing dangerous missions.",
+        correct: true,
+      },
+      {
+        text: "Establish diplomatic relations with alien species.",
+        correct: false,
+      },
+      { text: "Explore uncharted territories in space.", correct: false },
+      {
+        text: "Scavenge for resources on uninhabited planets.",
+        correct: false,
+      },
+    ],
+  },
+  {
+    question: "Main antagonists in Helldivers 2?",
+    answers: [
+      { text: "Zorblaxians - peaceful and diplomatic.", correct: false },
+      { text: "GalactiTrons - nomadic traders.", correct: false },
+      {
+        text: "Bugs, Cyborgs, and Illuminates - aggressive and formidable.",
+        correct: true,
+      },
+      { text: "OmniMechs - advanced artificial intelligence.", correct: false },
+    ],
+  },
+  {
+    question: "Organization in Helldivers 2?",
+    answers: [
+      { text: "United Space Explorers Alliance.", correct: false },
+      { text: "Intergalactic Peacekeepers Union.", correct: false },
+      { text: "Interstellar Trade Federation.", correct: false },
+      { text: "Super Earth's Helldivers.", correct: true },
+    ],
+  },
+  {
+    question: "Number of player classes in Helldivers 2?",
+    answers: [
+      { text: "2", correct: false },
+      { text: "4", correct: true },
+      { text: "5", correct: false },
+      { text: "7", correct: false },
+    ],
+  },
+  {
+    question: "Key differences between classes in Helldivers 2?",
+    answers: [
+      { text: "Unique abilities, weapons, and equipment.", correct: true },
+      { text: "Same weapons and abilities for all.", correct: false },
+      { text: "Only one class has heavy weaponry.", correct: false },
+      { text: "Classes differ only in appearance.", correct: false },
+    ],
+  },
+  {
+    question: "Type of randomly generated missions in Helldivers 2?",
+    answers: [
+      { text: "Dynamic missions with various objectives.", correct: true },
+      { text: "Story-based missions.", correct: false },
+      { text: "Side quests.", correct: false },
+      { text: "Escort missions.", correct: false },
+    ],
+  },
+  {
+    question: "Role of strategy in completing missions?",
+    answers: [
+      {
+        text: "Crucial for coordinating attacks and managing resources.",
+        correct: true,
+      },
+      { text: "Irrelevant; brute force always prevails.", correct: false },
+      { text: "Only matters in multiplayer.", correct: false },
+      { text: "Limited to choosing class.", correct: false },
+    ],
+  },
+  {
+    question: "How to unlock new weapons and equipment?",
+    answers: [
+      { text: "Earn experience points and level up.", correct: true },
+      { text: "Purchase with real money.", correct: false },
+      { text: "Complete achievements.", correct: false },
+      { text: "Find them scattered across the game world.", correct: false },
+    ],
+  },
+  {
+    question: "Consequences of friendly fire?",
+    answers: [
+      {
+        text: "Can injure or kill teammates, hindering mission progress.",
+        correct: true,
+      },
+      { text: "No consequences; friendly fire is disabled.", correct: false },
+      { text: "Only the damaged player suffers consequences.", correct: false },
+      { text: "Reduces the team's score.", correct: false },
+    ],
+  },
+  {
+    question: "Different environments in Helldivers 2?",
+    answers: [
+      { text: "Urban, desert, forest, and arctic.", correct: true },
+      { text: "Only urban environments.", correct: false },
+      { text: "Only desert environments.", correct: false },
+      { text: "Only jungle environments.", correct: false },
+    ],
+  },
+  {
+    question: "Importance of teamwork?",
+    answers: [
+      {
+        text: "Essential for coordinating attacks and reviving teammates.",
+        correct: true,
+      },
+      { text: "Optional; solo play is encouraged.", correct: false },
+      { text: "Necessary for certain missions only.", correct: false },
+      { text: "Affects mission completion time only.", correct: false },
+    ],
+  },
+  {
+    question: "How to call in reinforcements during missions?",
+    answers: [
+      {
+        text: "Request reinforcements using a special beacon item.",
+        correct: true,
+      },
+      {
+        text: "Reinforcements arrive automatically at set intervals.",
+        correct: false,
+      },
+      { text: "Call by finding special items on the map.", correct: false },
+      { text: "Summon by sacrificing resources.", correct: false },
+    ],
+  },
+  {
+    question: "Role of customizable Load-outs?",
+    answers: [
+      {
+        text: "Tailor equipment to suit different mission objectives and playstyles.",
+        correct: true,
+      },
+      { text: "Purely cosmetic.", correct: false },
+      { text: "Predetermined based on class selection.", correct: false },
+      { text: "Affects single-player mode only.", correct: false },
+    ],
+  },
+  {
+    question: "Significance of the 'Dive Hard' mechanic?",
+    answers: [
+      {
+        text: "Enables players to perform evasive maneuvers and dodge enemy attacks.",
+        correct: true,
+      },
+      { text: "Allows swimming underwater.", correct: false },
+      { text: "Reference to a popular action movie.", correct: false },
+      { text: "Grants temporary invincibility.", correct: false },
+    ],
+  },
+  {
+    question: "Additional challenges or modifiers in missions?",
+    answers: [
+      {
+        text: "Environmental hazards, enemy reinforcements, and mission-specific modifiers.",
+        correct: true,
+      },
+      { text: "No additional challenges or modifiers.", correct: false },
+      { text: "Weather conditions such as rain or snow.", correct: false },
+      { text: "Day and night cycles.", correct: false },
+    ],
+  },
 ];
 
 // Variables
@@ -187,77 +187,94 @@ let score = 0;
  * Hides .app when page is loaded
  */
 document.addEventListener("DOMContentLoaded", function () {
-    var appDiv = document.querySelector(".app");
-    appDiv.style.display = "none";
-    console.log(".app div is now hidden");
+  var appDiv = document.querySelector(".app");
+  appDiv.style.display = "none";
+  console.log(".app div is now hidden");
 
-    // Create the Start button
-    var startBtn = document.createElement("button");
-    startBtn.textContent = "Start";
-    startBtn.id = "start-btn";
+  // Create the Start button
+  var startBtn = document.createElement("button");
+  startBtn.textContent = "Start";
+  startBtn.id = "start-btn";
 
-    // Append the Start button under the instructions section
-    var instructions = document.getElementById("instructions");
-    instructions.appendChild(startBtn);
+  // Append the Start button under the instructions section
+  var instructions = document.getElementById("instructions");
+  instructions.appendChild(startBtn);
 
-    startBtn.addEventListener("click", startGame);
+  startBtn.addEventListener("click", startGame);
 });
 
 function startGame() {
-    const introDiv = document.getElementById("intro");
-    const instructionsDiv = document.getElementById("quiz-instructions");
-    const quizDiv = document.querySelector(".quiz");
-    const appDiv = document.querySelector(".app")
+  const introDiv = document.getElementById("intro");
+  const instructionsDiv = document.getElementById("quiz-instructions");
+  const quizDiv = document.querySelector(".quiz");
+  const appDiv = document.querySelector(".app");
 
-    introDiv.style.display = "none";
-    instructionsDiv.style.display = "none";
-    quizDiv.style.display = "block";
-    appDiv.style.display = "block";
+  introDiv.style.display = "none";
+  instructionsDiv.style.display = "none";
+  quizDiv.style.display = "block";
+  appDiv.style.display = "block";
 
-    console.log("Game started");
+  console.log("Game started");
 
-    displayQuestion();
+  displayQuestion();
 }
 
 function displayQuestion() {
-    console.log("Displaying question");
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNumber = currentQuestionIndex + 1;
-    questionElement.textContent = questionNumber + ". " + currentQuestion.question;
+  console.log("Displaying question");
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionNumber = currentQuestionIndex + 1;
+  questionElement.textContent =
+    questionNumber + ". " + currentQuestion.question;
 
-    // Clear any existing answer buttons
-    answerButtons.innerHTML = "";
+  // Clear any existing answer buttons
+  answerButtons.innerHTML = "";
 
-    // Create buttons for each answer
-    currentQuestion.answers.forEach(answer => {
-        let button = document.createElement("button");
-        button.textContent = answer.text;
-        button.classList.add("btn");
-        button.addEventListener("click", selectAnswer);
-        answerButtons.appendChild(button);
-    });
+  // Create buttons for each answer
+  currentQuestion.answers.forEach((answer) => {
+    let button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("btn");
+    button.addEventListener("click", selectAnswer);
+    answerButtons.appendChild(button);
+  });
 
-    console.log("Answer buttons created");
+  console.log("Answer buttons created");
 
-    // Show the next button if it's not the last question
-    if (currentQuestionIndex < questions.length - 1) {
-        nextButton.style.display = "block";
-    } else {
-        // Hide the next button if it's the last question
-        nextButton.style.display = "none";
-    }
+  // Show the next button if it's not the last question
+  if (currentQuestionIndex < questions.length - 1) {
+    nextButton.style.display = "block";
+  } else {
+    // Hide the next button if it's the last question
+    nextButton.style.display = "none";
+  }
 }
 function selectAnswer(event) {
-    let selectedButton = event.target;
-    let correct = selectedButton.dataset.correct;
-
-    // Handle the answer based on correctness
-    if (correct) {
-        // Update score if the answer is correct
-        score++;
+    const selectedBtn = event.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+  
+    // Highlight the selected answer
+    if (isCorrect) {
+      selectedBtn.classList.add("correct");
+      score++;
+    } else {
+      selectedBtn.classList.add("incorrect");
+  
+      // Find and highlight the correct answer
+      Array.from(answerButtons.children).forEach((button) => {
+        if (button.dataset.correct === "true") {
+          button.classList.add("correct");
+        } else {
+          button.classList.add("incorrect");
+        }
+      });
     }
-
-    // Move to the next question
-    currentQuestionIndex++;
-    displayQuestion();
-}
+  
+    // Disable all buttons after selection
+    Array.from(answerButtons.children).forEach((button) => {
+      button.disabled = true;
+    });
+  
+    // Enable the next button
+    nextButton.disabled = false;
+    nextButton.style.display = "block";
+  }
