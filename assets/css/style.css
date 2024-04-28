@@ -40,7 +40,7 @@ body {
     max-width: 600px;
     border-radius: 10px;
     padding: 20px; /* Increased padding for better spacing */
-    text-align: center; /* Align text to the left for better readability */
+    text-align: center;
 }
 
 #instructions ol {
