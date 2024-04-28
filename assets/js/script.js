@@ -304,9 +304,37 @@ function selectAnswer(e) {
 }
 
 function showScore() {
-  resetState();
-  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-  addRestartButton();
+  console.log("Showing score...");
+  resetState(); // Reset the state of the quiz
+  const scoreCategoriesElement = document.getElementById("scores-categories");
+  const scoreResultElement = scoreCategoriesElement.querySelector("p");
+  
+  // Define the score categories and corresponding messages
+  const scoreCategories = [
+    { minScore: 1, maxScore: 5, message: "You need more training, cadet! Report to the academy!" },
+    { minScore: 6, maxScore: 10, message: "You are soon ready to liberate the galaxy and spread democracy!" },
+    { minScore: 11, maxScore: 15, message: "Get ready to defend democracy in the galaxy, Helldiver!" }
+  ];
+
+  // Find the appropriate message based on the user's score
+  const userScore = score;
+  let userMessage = "";
+  for (const category of scoreCategories) {
+    if (userScore >= category.minScore && userScore <= category.maxScore) {
+      userMessage = category.message;
+      break;
+    }
+  }
+
+  // Display the result message
+  scoreResultElement.textContent = userMessage;
+
+  // Show the score categories element
+  scoreCategoriesElement.style.display = "block";
+
+  // Hide the last question element
+  const lastQuestionElement = document.getElementById("question");
+  lastQuestionElement.style.display = "none";
 }
 
 function handleNextButton() {
@@ -314,7 +342,9 @@ function handleNextButton() {
   if (currentQuestionIndex < questions.length) {
     displayQuestion(); // Call displayQuestion
   } else {
-    showScore();
+    nextButton.disabled = true;
+    nextButton.removeEventListener("click", handleNextButton);
+    showScore(); // Move showScore to this else block
   }
 }
 
