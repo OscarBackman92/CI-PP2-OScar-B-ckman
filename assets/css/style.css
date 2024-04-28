@@ -145,6 +145,19 @@ body {
     display: none;
 }
 
+.error-backbutton {
+    background: #2c3e50;
+    color: #ffffff;
+    font-weight: bold;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
 /* media query for larger screens */
 @media screen and (min-width: 768px) {
     header img {
