@@ -8,12 +8,13 @@
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
 }
-
+/* Header img */
 header img {
     width: 275px;
     margin-top: 20px;
 }
 
+/*Body styling */
 body {
     background: rgb(6, 46, 97) url(../images/Helldivers_2_Background_image.jpeg) center top/cover no-repeat fixed;
     font-family: 'Orbitron', sans-serif;
@@ -22,7 +23,7 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
-
+/* Intro styling */
 #intro {
     background: #ecd56f;
     width: 90%;
@@ -33,10 +34,11 @@ body {
     font-size: 15px;
 }
 
+/* General list styling */
 li {
     list-style-type: none;
 }
-
+/* Instructions styling */
 #quiz-instructions {
     margin-top: 10px;
     margin-left: auto;
@@ -49,18 +51,22 @@ li {
     text-align: center;
     font-size: 11px;
 }
-
+/* Instructions Ol styling */
 #instructions ol {
     list-style: none; 
     padding-left: 0;
     margin: 0;
 }
 
+/* instructions list styling */
+
 #instructions li {
     margin-bottom: 10px;
     padding-left: 0; 
     text-align: center;
 }
+
+/* Quiz app styling */
 .app {
     background: #ecd56f;
     width: 90%;
@@ -70,6 +76,7 @@ li {
     padding: 30px;
 }
 
+/* app header styling */
 .app h1 {
     font-size: 25px;
     color: #001e4d;
@@ -89,6 +96,7 @@ li {
     font-weight: 600;
 }
 
+/* button styling */
 .btn {
     width: 100%;
     padding: 10px;
@@ -140,6 +148,7 @@ li {
     display: block;
 }
 
+/* Javascript button styling */
 .correct {
     background: green;
 }
@@ -152,6 +161,7 @@ li {
     display: none;
 }
 
+/* 404 page button styling */
 .error-backbutton {
     background: #2c3e50;
     color: #ffffff;
@@ -165,6 +175,7 @@ li {
     display: block;
 }
 
+/* keeps footer on bottom styling */
 footer {
     position: fixed;
     bottom: 0;
@@ -176,10 +187,6 @@ footer {
     text-align: center;
 }
 
-section {
-    min-height: 670px;
-}
-
 .footer {
     padding: 20px 0;
     background-color: #ecd56f;
@@ -187,6 +194,8 @@ section {
     justify-content: center;
 
 }
+
+/* media quearys for smaller screens */
 
 @media screen and (max-width: 600px) {
     .app {
@@ -204,5 +213,14 @@ section {
     header img {
         width: 512px;
         height: 144px;
+    }
+    /* General list styling */
+    li {
+        list-style-type: none;
+    }
+    #instructions ol {
+        list-style: none; 
+        padding-left: 0;
+        margin: 0;
     }
 }
