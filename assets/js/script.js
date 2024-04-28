@@ -203,6 +203,13 @@ document.addEventListener("DOMContentLoaded", function () {
   startBtn.addEventListener("click", startGame);
 });
 
+/**
+ * Starts the quiz by hiding intro div
+ * hides the instructions
+ * Logs a message to console that the game has started
+ * Shows first question
+ */
+
 function startGame() {
   const introDiv = document.getElementById("intro");
   const instructionsDiv = document.getElementById("quiz-instructions");
@@ -218,6 +225,7 @@ function startGame() {
 
   displayQuestion();
 }
+
 
 function displayQuestion() {
   console.log("Displaying question");
