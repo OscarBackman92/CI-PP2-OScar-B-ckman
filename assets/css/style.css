@@ -27,7 +27,7 @@ body {
     background: #ecd56f;
     width: 90%;
     max-width: 600px;
-    margin: 100px auto 0;
+    margin: 60px auto 0;
     border-radius: 10px;
     padding: 10px;
     font-size: 15px;
@@ -47,7 +47,7 @@ li {
     border-radius: 10px;
     padding: 20px; 
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 #instructions ol {
