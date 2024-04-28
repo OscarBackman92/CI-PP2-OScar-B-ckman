@@ -238,18 +238,14 @@ function displayQuestion() {
     answerButtons.appendChild(button);
   });
 
-  console.log("Answer buttons created");
   // Add event listener to the Next button
   nextButton.addEventListener("click", handleNextButton);
 
-  // Show the next button if it's not the last question
-  if (currentQuestionIndex < questions.length - 1) {
-    nextButton.style.display = "block";
-  } else {
-    // Hide the next button if it's the last question
-    nextButton.style.display = "none";
+  // Disable the next button until an answer is selected
+  nextButton.disabled = true;
+  nextButton.style.display = "none"; // Hide the next button until needed
 
-  }
+  console.log("Answer buttons created");
 }
 
 function resetState() {
@@ -316,9 +312,14 @@ function handleNextButton() {
 
 function addRestartButton() {
   const restartButton = document.createElement("button");
-  restartButton.textContent = "Restart";
-  restartButton.classList.add("btn");
-  restartButton.addEventListener("click", restartGame);
+  restartButton.textContent = "Restart Quiz";
+  restartButton.classList.add("btn"); // Add "btn" class for styling
+  restartButton.classList.add("next-btn"); // Add "next-btn" class for styling
+  restartButton.addEventListener("click", () => {
+    currentQuestionIndex = 0;
+    score = 0;
+    displayQuestion();
+  });
   answerButtons.appendChild(restartButton);
 }
 
