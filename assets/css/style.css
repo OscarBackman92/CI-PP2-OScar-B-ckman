@@ -159,11 +159,23 @@ body {
 }
 
 footer {
-    background-color: #ecd56f;; /* Dark background color */
+    background-color: #ecd56f; /* Dark background color */
     color: #fff; /* Light text color */
     padding: 20px; /* Padding for content inside footer */
     text-align: center; /* Center-align text */
-    margin-top: 380px;
+    margin-top: 360px;
+}
+
+section {
+    min-height: 670px;
+}
+
+.footer {
+    padding: 20px 0;
+    background-color: #ecd56f;
+    display: flex;
+    justify-content: center;
+
 }
 
 
