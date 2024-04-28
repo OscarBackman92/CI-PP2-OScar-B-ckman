@@ -15,7 +15,7 @@ header img {
 }
 
 body {
-    background: rgb(6, 46, 97) url(../images/Helldivers_2_Background_image.jpeg) center center/cover no-repeat;
+    background: rgb(6, 46, 97) url(../images/Helldivers_2_Background_image.jpeg) center top/cover no-repeat fixed;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
     color: #16074d;
@@ -178,6 +178,16 @@ section {
 
 }
 
+@media screen and (max-width: 600px) {
+    .app {
+      padding: 5px; /* Reduce padding for smaller screens */
+    }
+  
+    .btn {
+      font-size: 12px; /* Decrease button font size for smaller screens */
+      text-align: center;
+    }
+  }
 
 /* media query for larger screens */
 @media screen and (min-width: 768px) {
