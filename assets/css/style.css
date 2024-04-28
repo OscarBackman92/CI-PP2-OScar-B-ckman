@@ -26,15 +26,14 @@ body {
 #intro {
     background: #ecd56f;
     width: 90%;
+    margin: 30px auto 0;
     max-width: 600px;
-    margin: 100px auto 0;
     border-radius: 10px;
     padding: 10px;
+    font-size: 12px;
 }
 #quiz-instructions {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 0;
     background: #ecd56f;
     width: 90%;
     max-width: 600px;
@@ -43,17 +42,31 @@ body {
     text-align: center;
 }
 
-#instructions ol {
-    list-style: none; 
-    padding-left: 0;
-    margin: 0;
+#instructions {
+    margin-bottom: 10px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 12px;
+}
+
+#instructions ol,
+#instructions ul {
+    list-style-type: none;
+    text-align: center;
 }
 
 #instructions li {
     margin-bottom: 10px;
-    padding-left: 0; 
     text-align: center;
 }
+
+#instructions h3 {
+    color: #001e4d;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .app {
     background: #ecd56f;
     width: 90%;
@@ -175,7 +188,7 @@ section {
 
 .footer {
     padding: 20px 0;
-    background-color: #ecd56f;
+    background-color: #38310f;
     display: flex;
     justify-content: center;
 
