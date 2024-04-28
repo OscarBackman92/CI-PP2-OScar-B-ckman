@@ -61,8 +61,8 @@ const questions = [
   {
     question: "Type of randomly generated missions in Helldivers 2?",
     answers: [
-      { text: "Dynamic missions with various objectives.", correct: true },
       { text: "Story-based missions.", correct: false },
+      { text: "Dynamic missions with various objectives.", correct: true },
       { text: "Side quests.", correct: false },
       { text: "Escort missions.", correct: false },
     ],
@@ -70,12 +70,9 @@ const questions = [
   {
     question: "Role of strategy in completing missions?",
     answers: [
-      {
-        text: "Crucial for coordinating attacks and managing resources.",
-        correct: true,
-      },
       { text: "Irrelevant; brute force always prevails.", correct: false },
       { text: "Only matters in multiplayer.", correct: false },
+      { text: "Crucial for coordinating attacks and managing resources.",correct: true,},
       { text: "Limited to choosing class.", correct: false },
     ],
   },
@@ -91,11 +88,8 @@ const questions = [
   {
     question: "Consequences of friendly fire?",
     answers: [
-      {
-        text: "Can injure or kill teammates, hindering mission progress.",
-        correct: true,
-      },
       { text: "No consequences; friendly fire is disabled.", correct: false },
+      { text: "Can injure or kill teammates, hindering mission progress.",correct: true,},
       { text: "Only the damaged player suffers consequences.", correct: false },
       { text: "Reduces the team's score.", correct: false },
     ],
@@ -103,35 +97,26 @@ const questions = [
   {
     question: "Different environments in Helldivers 2?",
     answers: [
-      { text: "Urban, desert, forest, and arctic.", correct: true },
       { text: "Only urban environments.", correct: false },
       { text: "Only desert environments.", correct: false },
+      { text: "Urban, desert, forest, and arctic.", correct: true },
       { text: "Only jungle environments.", correct: false },
     ],
   },
   {
     question: "Importance of teamwork?",
     answers: [
-      {
-        text: "Essential for coordinating attacks and reviving teammates.",
-        correct: true,
-      },
       { text: "Optional; solo play is encouraged.", correct: false },
       { text: "Necessary for certain missions only.", correct: false },
       { text: "Affects mission completion time only.", correct: false },
+      { text: "Essential for coordinating attacks and reviving teammates.",correct: true,},
     ],
   },
   {
     question: "How to call in reinforcements during missions?",
     answers: [
-      {
-        text: "Request reinforcements using a special beacon item.",
-        correct: true,
-      },
-      {
-        text: "Reinforcements arrive automatically at set intervals.",
-        correct: false,
-      },
+      { text: "Request reinforcements using a special beacon item.", correct: true,},
+      {text: "Reinforcements arrive automatically at set intervals.", correct: false,},
       { text: "Call by finding special items on the map.", correct: false },
       { text: "Summon by sacrificing resources.", correct: false },
     ],
@@ -139,11 +124,8 @@ const questions = [
   {
     question: "Role of customizable Load-outs?",
     answers: [
-      {
-        text: "Tailor equipment to suit different mission objectives and playstyles.",
-        correct: true,
-      },
       { text: "Purely cosmetic.", correct: false },
+      { text: "Tailor equipment to suit different mission objectives and playstyles.", correct: true,},
       { text: "Predetermined based on class selection.", correct: false },
       { text: "Affects single-player mode only.", correct: false },
     ],
@@ -151,24 +133,18 @@ const questions = [
   {
     question: "Significance of the 'Dive Hard' mechanic?",
     answers: [
-      {
-        text: "Enables players to perform evasive maneuvers and dodge enemy attacks.",
-        correct: true,
-      },
       { text: "Allows swimming underwater.", correct: false },
       { text: "Reference to a popular action movie.", correct: false },
       { text: "Grants temporary invincibility.", correct: false },
+      { text: "Enables players to perform evasive maneuvers and dodge enemy attacks.", correct: true,},
     ],
   },
   {
     question: "Additional challenges or modifiers in missions?",
     answers: [
-      {
-        text: "Environmental hazards, enemy reinforcements, and mission-specific modifiers.",
-        correct: true,
-      },
       { text: "No additional challenges or modifiers.", correct: false },
       { text: "Weather conditions such as rain or snow.", correct: false },
+      { text: "Environmental hazards, enemy reinforcements, and mission-specific modifiers.", correct: true,},
       { text: "Day and night cycles.", correct: false },
     ],
   },
