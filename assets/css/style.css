@@ -1,7 +1,7 @@
 /* Google font */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
-/* Resetting default styles */
+/* Asterisk wildcard selector to override default styles from browser */
 * {
     padding: 0;
     margin: 0;
@@ -9,13 +9,11 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-/* Styling header image */
 header img {
     width: 275px;
     margin-top: 20px;
 }
 
-/* Body styles */
 body {
     background: rgb(6, 46, 97) url(../images/Helldivers_2_Background_image.jpeg) center top/cover no-repeat fixed;
     font-family: 'Orbitron', sans-serif;
@@ -25,45 +23,37 @@ body {
     padding: 20px;
 }
 
-/* Styling introduction section */
 #intro {
     background: #ecd56f;
     width: 90%;
-    margin: 30px auto 0;
     max-width: 600px;
+    margin: 100px auto 0;
     border-radius: 10px;
     padding: 10px;
-    font-size: 12px;
 }
-
-/* Styling quiz instructions */
 #quiz-instructions {
-    margin: 10px auto 0;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     background: #ecd56f;
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px; 
     text-align: center;
 }
 
-/* Styling instructions list */
-#instructions {
+#instructions ol {
+    list-style: none; 
+    padding-left: 0;
+    margin: 0;
+}
+
+#instructions li {
     margin-bottom: 10px;
-    list-style-type: none;
+    padding-left: 0; 
     text-align: center;
-    font-size: 12px;
 }
-
-/* Styling instruction headings */
-#instructions h3 {
-    color: #001e4d;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Main app container styles */
 .app {
     background: #ecd56f;
     width: 90%;
@@ -73,7 +63,6 @@ body {
     padding: 30px;
 }
 
-/* App heading styles */
 .app h1 {
     font-size: 25px;
     color: #001e4d;
@@ -82,19 +71,17 @@ body {
     padding-bottom: 30px;
 }
 
-/* Styling quiz section */
 .quiz {
     padding: 20px 0;
+
 }
 
-/* Styling quiz headings */
 .quiz h2 {
     font-size: 18px;
     color: #001e4d;
     font-weight: 600;
 }
 
-/* Button styles */
 .btn {
     width: 100%;
     padding: 10px;
@@ -103,7 +90,7 @@ body {
     text-align: left;
     margin: 10px 0;
     color: #ffffff;
-    background-color: #2c3e50;
+    background-color: #2c3e50; 
     border: 1px solid #27ae60;
     border-radius: 4px;
     cursor: pointer;
@@ -111,24 +98,53 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Button hover styles */
 .btn:hover:not(:disabled) {
     background: #222;
     color: #fff;
 }
 
-/* Disabled button styles */
 .btn:disabled {
     cursor: no-drop;
 }
 
-/* Specific button styles */
-#next-btn,
-#start-btn,
-#restart-btn,
-.next-btn,
-.correct,
-.incorrect,
+#next-btn, #start-btn, #restart-btn {
+    background: #2c3e50;
+    color: #ffffff;
+    font-weight: bold;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.next-btn {
+    background: #2c3e50;
+    color: #ffffff;
+    font-weight: bold;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.correct {
+    background: green;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+#scores-categories {
+    display: none;
+}
+
 .error-backbutton {
     background: #2c3e50;
     color: #ffffff;
@@ -142,7 +158,6 @@ body {
     display: block;
 }
 
-/* Footer styles */
 footer {
     position: fixed;
     bottom: 0;
@@ -154,32 +169,30 @@ footer {
     text-align: center;
 }
 
-/* Styling sections */
 section {
     min-height: 670px;
 }
 
-/* Footer container styles */
 .footer {
     padding: 20px 0;
-    background-color: #38310f;
+    background-color: #ecd56f;
     display: flex;
     justify-content: center;
+
 }
 
-/* Media query for smaller screens */
 @media screen and (max-width: 600px) {
     .app {
-        padding: 5px;
+      padding: 5px; /* Reduce padding for smaller screens */
     }
-
+  
     .btn {
-        font-size: 12px;
-        text-align: center;
+      font-size: 12px; /* Decrease button font size for smaller screens */
+      text-align: center;
     }
-}
+  }
 
-/* Media query for larger screens */
+/* media query for larger screens */
 @media screen and (min-width: 768px) {
     header img {
         width: 512px;
