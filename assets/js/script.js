@@ -337,6 +337,8 @@ function showScore() {
   // Hide the last question element
   const lastQuestionElement = document.getElementById("question");
   lastQuestionElement.style.display = "none";
+
+  addRestartButton();
 }
 
 function handleNextButton() {
@@ -345,26 +347,32 @@ function handleNextButton() {
     displayQuestion(); // Call displayQuestion
   } else {
     nextButton.disabled = true;
-    nextButton.removeEventListener("click", handleNextButton);
     showScore(); // Move showScore to this else block
   }
 }
 
 function addRestartButton() {
+  console.log("Adding Restart Quiz button...");
   const restartButton = document.createElement("button");
   restartButton.textContent = "Restart Quiz";
   restartButton.classList.add("btn"); // Add "btn" class for styling
   restartButton.classList.add("next-btn"); // Add "next-btn" class for styling
-  restartButton.addEventListener("click", () => {
-    currentQuestionIndex = 0;
-    score = 0;
-    displayQuestion();
-  });
+  restartButton.addEventListener("click", restartGame); // Call restartGame
   answerButtons.appendChild(restartButton);
 }
 
 function restartGame() {
+  console.log("Restarting game...");
   currentQuestionIndex = 0;
   score = 0;
+  
+  // Show the question element
+  const questionElement = document.getElementById("question");
+  questionElement.style.display = "block";
+  
+  // Hide the scores-categories element
+  const scoresCategoriesElement = document.getElementById("scores-categories");
+  scoresCategoriesElement.style.display = "none";
+  
   displayQuestion();
 }
