@@ -28,7 +28,7 @@ body {
     background: #ecd56f;
     width: 90%;
     max-width: 600px;
-    margin: 60px auto 0;
+    margin: 20px auto 0;
     border-radius: 10px;
     padding: 10px;
     font-size: 15px;
@@ -212,7 +212,7 @@ footer {
 @media screen and (min-width: 768px) {
     header img {
         width: 512px;
-        height: 144px;
+        height: 130px;
     }
     /* General list styling */
     li {
@@ -222,5 +222,13 @@ footer {
         list-style: none; 
         padding-left: 0;
         margin: 0;
+    }
+
+    #intro {
+        font-size: 18px;
+    }
+
+    #instructions {
+        font-size: 15px;
     }
 }
