@@ -223,8 +223,7 @@ function displayQuestion() {
   console.log("Displaying question");
   let currentQuestion = questions[currentQuestionIndex];
   let questionNumber = currentQuestionIndex + 1;
-  questionElement.textContent =
-    questionNumber + ". " + currentQuestion.question;
+  questionElement.textContent = questionNumber + ". " + currentQuestion.question;
 
   // Clear any existing answer buttons
   answerButtons.innerHTML = "";
@@ -234,11 +233,14 @@ function displayQuestion() {
     let button = document.createElement("button");
     button.textContent = answer.text;
     button.classList.add("btn");
+    button.dataset.correct = answer.correct; // Add dataset for correctness
     button.addEventListener("click", selectAnswer);
     answerButtons.appendChild(button);
   });
 
   console.log("Answer buttons created");
+  // Add event listener to the Next button
+  nextButton.addEventListener("click", handleNextButton);
 
   // Show the next button if it's not the last question
   if (currentQuestionIndex < questions.length - 1) {
@@ -246,44 +248,82 @@ function displayQuestion() {
   } else {
     // Hide the next button if it's the last question
     nextButton.style.display = "none";
+
   }
 }
+
+function resetState() {
+  nextButton.style.display = "none";
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  };
+
+}
 function selectAnswer(e) {
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
 
-    console.log("Selected answer:", selectedBtn.textContent);
-    console.log("Is correct:", isCorrect);
+  console.log("Selected answer:", selectedBtn.textContent);
+  console.log("Is correct:", isCorrect);
 
-    // Highlight the selected answer
-    if (isCorrect) {
-        console.log("Selected answer is correct");
-        selectedBtn.classList.add("correct");
-        score++;
-    } else {
-        console.log("Selected answer is incorrect");
-        selectedBtn.classList.add("incorrect");
+  // Highlight the selected answer
+  if (isCorrect) {
+    console.log("Selected answer is correct");
+    selectedBtn.classList.add("correct");
+    score++;
+  } else {
+    console.log("Selected answer is incorrect");
+    selectedBtn.classList.add("incorrect");
 
-        // Find and highlight the correct answer
-        Array.from(answerButtons.children).forEach(button => {
-            if (button.dataset.correct === "true") {
-                console.log("Correct answer:", button.textContent);
-                button.classList.add("correct");
-            } else {
-                console.log("Incorrect answer:", button.textContent);
-                button.classList.add("incorrect");
-            }
-        });
-    }
-
-    // Disable all buttons after selection
-    console.log("Disabling all answer buttons");
+    // Find and highlight the correct answer
     Array.from(answerButtons.children).forEach(button => {
-        button.disabled = true;
+      if (button.dataset.correct === "true") {
+        console.log("Correct answer:", button.textContent);
+        button.classList.add("correct");
+      } else {
+        console.log("Incorrect answer:", button.textContent);
+        button.classList.add("incorrect");
+      }
     });
+  }
 
-    // Enable the next button
-    console.log("Enabling the next button");
-    nextButton.disabled = false;
-    nextButton.style.display = "block";
+  // Disable all buttons after selection
+  console.log("Disabling all answer buttons");
+  Array.from(answerButtons.children).forEach(button => {
+    button.disabled = true;
+  });
+
+  // Enable the next button
+  console.log("Enabling the next button");
+  nextButton.disabled = false;
+  nextButton.style.display = "block";
+}
+
+function showScore() {
+  resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+  addRestartButton();
+}
+
+function handleNextButton() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    displayQuestion(); // Call displayQuestion
+  } else {
+    showScore();
+  }
+}
+
+function addRestartButton() {
+  const restartButton = document.createElement("button");
+  restartButton.textContent = "Restart";
+  restartButton.classList.add("btn");
+  restartButton.addEventListener("click", restartGame);
+  answerButtons.appendChild(restartButton);
+}
+
+function restartGame() {
+  currentQuestionIndex = 0;
+  score = 0;
+  displayQuestion();
 }
