@@ -248,8 +248,8 @@ function displayQuestion() {
     nextButton.style.display = "none";
   }
 }
-function selectAnswer(event) {
-    const selectedBtn = event.target;
+function selectAnswer(e) {
+    const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
 
     console.log("Selected answer:", selectedBtn.textContent);
@@ -265,7 +265,7 @@ function selectAnswer(event) {
         selectedBtn.classList.add("incorrect");
 
         // Find and highlight the correct answer
-        Array.from(answerButtons.children).forEach((button) => {
+        Array.from(answerButtons.children).forEach(button => {
             if (button.dataset.correct === "true") {
                 console.log("Correct answer:", button.textContent);
                 button.classList.add("correct");
@@ -278,7 +278,7 @@ function selectAnswer(event) {
 
     // Disable all buttons after selection
     console.log("Disabling all answer buttons");
-    Array.from(answerButtons.children).forEach((button) => {
+    Array.from(answerButtons.children).forEach(button => {
         button.disabled = true;
     });
 

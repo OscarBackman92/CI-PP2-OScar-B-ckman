@@ -39,18 +39,21 @@ body {
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-}
-#instructions {
-    list-style: none;
-    padding: 0;
+    padding: 20px; /* Increased padding for better spacing */
+    text-align: center; /* Align text to the left for better readability */
 }
 
 #instructions ol {
-    margin-bottom: 10px;
+    list-style: none; /* Remove default numbering */
+    padding-left: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
 }
 
+#instructions li {
+    margin-bottom: 10px;
+    padding-left: 0; /* Remove padding to align text with the left edge */
+    text-align: center; /* Center text alignment */
+}
 .app {
     background: #ecd56f;
     width: 90%;
