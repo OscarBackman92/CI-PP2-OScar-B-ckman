@@ -194,6 +194,14 @@ footer {
     justify-content: center;
 
 }
+li::marker {
+    unicode-bidi: normal;
+    font-variant-numeric: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-align: left;
+    text-align-last: auto;
+}
 
 /* media quearys for smaller screens */
 
