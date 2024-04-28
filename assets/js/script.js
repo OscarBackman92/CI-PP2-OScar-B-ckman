@@ -311,7 +311,7 @@ function showScore() {
   
   // Define the score categories and corresponding messages
   const scoreCategories = [
-    { minScore: 1, maxScore: 5, message: "You need more training, cadet! Report to the academy!" },
+    { minScore: 0, maxScore: 5, message: "You need more training, cadet! Report to the academy!" },
     { minScore: 6, maxScore: 10, message: "You are soon ready to liberate the galaxy and spread democracy!" },
     { minScore: 11, maxScore: 15, message: "Get ready to defend democracy in the galaxy, Helldiver!" }
   ];
@@ -320,11 +320,13 @@ function showScore() {
   const userScore = score;
   let userMessage = "";
   for (const category of scoreCategories) {
+    console.log("Checking Category:", category);
     if (userScore >= category.minScore && userScore <= category.maxScore) {
-      userMessage = category.message;
-      break;
+      userMessage = "You scored " + userScore + (userScore === 1 ? " point." : " points.") + " " + category.message;
+      break; // Stop the loop as soon as the appropriate message is found
     }
   }
+  console.log("Final user message:", userMessage);
 
   // Display the result message
   scoreResultElement.textContent = userMessage;
