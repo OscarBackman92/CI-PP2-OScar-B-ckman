@@ -8,6 +8,14 @@ This is a quiz about my new favorite game, Helldivers 2 by Arrowhead.
 
 ## Features
 
+#### First page
+![Home](assets/Readme_images/Index_page.png)
+
+* When you first enter the website this is where you land.
+* This is also where you see the introduction to what this quiz is about.
+* The instruction to this quiz and how many questions there are.
+
+
 #### Favicon
 * A favicon has been implemented with the helldiver 2 and can be seen in the nav for each page.
 * This will allow the users to identify the website when they have multiple websites open.
@@ -15,6 +23,24 @@ This is a quiz about my new favorite game, Helldivers 2 by Arrowhead.
 ![favicon](assets/readme_images/Helldivers_favicon.png)
 
 ## Quiz
+
+### Game Functions
+
+* Clicking on "Start" initialize the game and hides "intro" and "instructions", displays first question and four different clickable answers.
+* When the user clicks on one of the answers the button will turn either green or red. -If the answer is correct the clicked button will turn green and the other 3 buttons will not turn red to indicate that the correct answer has been clicked.
+* If the answer is incorrect the clicked button and the other 2 buttons with incorrect answers will turn red and the correct answer will turn green to clearly show the user which one of the answers was correct.
+* When all the 15 questions has been answered the user will be directed to the finished section.
+
+![quiz-page](assets/Readme_images/Quiz_page.png)
+
+![clicked-answer](assets/Readme_images/quiz_page_clicked_answer.png)
+
+### Finishing Quiz
+
+* When the user have gone through the quiz's 15 different questions, the total score will show and a message of what to do for improvements.
+* Above there will be a restart button for the user to click and start game again.
+
+![quiz-end](assets/Readme_images/quiz_done.png)
 
 
 
@@ -24,8 +50,8 @@ This is a quiz about my new favorite game, Helldivers 2 by Arrowhead.
     * The structure of the Website was developed using HTML as the main language.
 * CSS
     * The Website was styled using custom CSS in an external file.
-* Gitpod
-    * The site was developed with Gitpod IDE
+* VScode
+    * The site was developed with VScode
 * GitHub
     * Source code is hosted on GitHub and deployed using Git Pages.
 * Git 
@@ -150,12 +176,15 @@ The project will now of been cloned on your local machine for use.
 - Gareth McGirr for mentoring when Daisy is on vacation, really stepping up!
 - CI for boilerplate and basic structure.
 - Jennifer Hujanen for inspiration to quiz project.
+- [GreatStack](https://www.youtube.com/watch?v=PBcqGxrr9g8&t=1s)
+- Google for information in general
+
 
 ### Content
 - Text content was written by [Oscar Bäckman] and ChatGPT.
 
 ### Media
-- Images and videos were sourced from [Image Source](https://www.theperfectloaf.com/my-best-sourdough-waffles/).
+- Background image were sourced from [Image Source](https://wall.alphacoders.com/big.php?i=1337068).
 
 ### Code
 - HTML, CSS and JavaScript code were developed by [Oscar Bäckman] based on design requirements.
