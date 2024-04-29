@@ -237,7 +237,7 @@ function displayQuestion() {
 
 /**
  * Resets the state of the quiz interface by hiding the next button and removing all answer buttons.
- *//
+ */
 function resetState() {
   nextButton.style.display = "none";
   while (answerButtons.firstChild) {
