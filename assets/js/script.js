@@ -161,18 +161,18 @@ let score = 0;
 
 /**
  * Hides .app when page is loaded
+ * Create the Start button
+ * Append the Start button under the instructions section
  */
 document.addEventListener("DOMContentLoaded", function () {
   var appDiv = document.querySelector(".app");
   appDiv.style.display = "none";
   console.log(".app div is now hidden");
 
-  // Create the Start button
   var startBtn = document.createElement("button");
   startBtn.textContent = "Start";
   startBtn.id = "start-btn";
 
-  // Append the Start button under the instructions section
   var instructions = document.getElementById("instructions");
   instructions.appendChild(startBtn);
 
@@ -180,17 +180,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /**
- * Starts the quiz by hiding intro div
- * hides the instructions
- * Logs a message to console that the game has started
- * Shows first question
+ * Starts the quiz game by hiding the introduction and instructions elements,
+ * displaying the quiz interface, and calling the function to display the first question.
  */
 
 function startGame() {
+
+  // Variables for startGame
   const introDiv = document.getElementById("intro");
   const instructionsDiv = document.getElementById("quiz-instructions");
   const quizDiv = document.querySelector(".quiz");
   const appDiv = document.querySelector(".app");
+
+  // Hides when StartGame
 
   introDiv.style.display = "none";
   instructionsDiv.style.display = "none";
@@ -202,42 +204,54 @@ function startGame() {
   displayQuestion();
 }
 
-
+/**
+ * Displays the current question on the quiz interface.
+ * Creates answer buttons for each answer option of the current question.
+ * Adds event listeners to answer buttons to handle answer selection.
+ */
 function displayQuestion() {
   console.log("Displaying question");
   let currentQuestion = questions[currentQuestionIndex];
   let questionNumber = currentQuestionIndex + 1;
   questionElement.textContent = questionNumber + ". " + currentQuestion.question;
 
-  // Clear any existing answer buttons
   answerButtons.innerHTML = "";
 
-  // Create buttons for each answer
   currentQuestion.answers.forEach((answer) => {
     let button = document.createElement("button");
     button.textContent = answer.text;
     button.classList.add("btn");
-    button.dataset.correct = answer.correct; // Add dataset for correctness
+    button.dataset.correct = answer.correct; 
     button.addEventListener("click", selectAnswer);
     answerButtons.appendChild(button);
   });
 
-  // Add event listener to the Next button
   nextButton.addEventListener("click", handleNextButton);
 
-  // Disable the next button until an answer is selected
   nextButton.disabled = true;
-  nextButton.style.display = "none"; // Hide the next button until needed
+  nextButton.style.display = "none";
 
   console.log("Answer buttons created");
 }
 
+
+/**
+ * Resets the state of the quiz interface by hiding the next button and removing all answer buttons.
+ *//
 function resetState() {
   nextButton.style.display = "none";
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
   }
 
+/**
+ * Handles the selection of an answer by the user.
+ * Checks if the selected answer is correct and updates the score accordingly.
+ * Highlights the selected answer and reveals the correct answer if the selected answer is incorrect.
+ * Disables all answer buttons after selection and enables the next button.
+ * 
+ * @param {Event} e - The event object representing the click event on an answer button.
+ */
 }
 function selectAnswer(e) {
   const selectedBtn = e.target;
@@ -246,7 +260,6 @@ function selectAnswer(e) {
   console.log("Selected answer:", selectedBtn.textContent);
   console.log("Is correct:", isCorrect);
 
-  // Highlight the selected answer
   if (isCorrect) {
     console.log("Selected answer is correct");
     selectedBtn.classList.add("correct");
@@ -278,7 +291,10 @@ function selectAnswer(e) {
   nextButton.disabled = false;
   nextButton.style.display = "block";
 }
-
+/**
+ * Displays the user's score and an appropriate message based on the score.
+ * Resets the state of the quiz, hides the last question, and shows the score categories element.
+ */
 function showScore() {
   console.log("Showing score...");
   resetState(); // Reset the state of the quiz
@@ -317,6 +333,11 @@ function showScore() {
   addRestartButton();
 }
 
+/**
+ * Handles the click event on the next button.
+ * Increments the current question index and displays the next question if available.
+ * Otherwise, disables the next button and displays the user's score.
+ */
 function handleNextButton() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -327,6 +348,10 @@ function handleNextButton() {
   }
 }
 
+/**
+ * Adds a restart button to the quiz interface.
+ * When clicked, it restarts the quiz by calling the restartGame function.
+ */
 function addRestartButton() {
   console.log("Adding Restart Quiz button...");
   const restartButton = document.createElement("button");
@@ -337,6 +362,10 @@ function addRestartButton() {
   answerButtons.appendChild(restartButton);
 }
 
+/**
+ * Restarts the quiz game by resetting the current question index and score,
+ * displaying the first question, and hiding the score categories element.
+ */
 function restartGame() {
   console.log("Restarting game...");
   currentQuestionIndex = 0;
