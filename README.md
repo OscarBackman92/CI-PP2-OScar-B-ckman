@@ -37,7 +37,7 @@ This is a quiz about my new favorite game, Helldivers 2 by Arrowhead.
 
 ### Finishing Quiz
 
-* When the user have gone through the quiz's 15 different questions, the total score will show and a message of what to do for improvements.
+* When the user has gone through the quiz's 15 different questions, the total score will show and a message of what to do for improvements.
 * Above there will be a restart button for the user to click and start game again.
 
 ![quiz-end](assets/Readme_images/quiz_done.png)
@@ -103,17 +103,6 @@ Testing was focused on accessibility everyone
 
 ![lighthouse](assets/Readme_images/lighthouse_test_helldivers_240429.png)
 
-### Version Control
-
-The site was created using the Visual Studio code editor and pushed to github to the remote repository ‘tacos-travels’.
-
-The following git commands were used throughout development to push code to the remote repo:
-
-```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
-
-```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
-
-```git push``` - This command was used to push all committed code to the remote repository on github.
 
 ### Validator
 
@@ -142,6 +131,18 @@ The following git commands were used throughout development to push code to the 
 | Select Wrong answer | Click a wrong answer                     | the wrong Answer get highlighted red and correct answer Green |
 | Score               | Click next when last question is answerd | Shows score and array message                                 |
 | Restart game        | Click restart quiz                       | First questions and answers is loaded 
+
+### Version Control
+
+The site was created using the Visual Studio code editor and pushed to github to the remote repository ‘tacos-travels’.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
+
+```git push``` - This command was used to push all committed code to the remote repository on github.
 
 ## Deployment
 
