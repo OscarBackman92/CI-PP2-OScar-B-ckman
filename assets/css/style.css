@@ -209,7 +209,17 @@ li::marker {
     text-align-last: auto;
 }
 
-/* media quearys for smaller screens */
+/* error page styling */
+.error-page {
+    background: #ecd56f;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+/* media queries for smaller screens */
 
 @media screen and (max-width: 600px) {
     .app {
@@ -228,7 +238,7 @@ li::marker {
         width: 512px;
         height: 130px;
     }
-    /* General list styling */
+    /* General list styling larger screens */
     li {
         list-style-type: none;
     }
