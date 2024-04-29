@@ -242,7 +242,7 @@ function resetState() {
   nextButton.style.display = "none";
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
-  }
+  } // End of resetState function
 
 /**
  * Handles the selection of an answer by the user.
