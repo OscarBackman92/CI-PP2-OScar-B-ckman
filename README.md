@@ -99,6 +99,14 @@ Testing was focused on accessibility everyone
 * That there is an alt text to images on the website
 * WCAG 2.1 Coding best practices being followed
 
+![wavetest1](assets/Readme_images/Wave_Testing_home_page.png)
+
+![wavetest2](assets/Readme_images/Wave_test_answerd_question_correct.png)
+
+![wavetest3](assets/Readme_images/Wave_test_answerd_question_wrong.png)
+
+![wavetest4](assets/Readme_images/Wave_testing_quiz_done.png)
+
 ### Lighthouse Testing
 
 ![lighthouse](assets/Readme_images/lighthouse_test_helldivers_240429.png)
