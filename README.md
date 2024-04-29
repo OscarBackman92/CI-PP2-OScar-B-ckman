@@ -20,7 +20,7 @@ This is a quiz about my new favorite game, Helldivers 2 by Arrowhead.
 * A favicon has been implemented with the helldiver 2 and can be seen in the nav for each page.
 * This will allow the users to identify the website when they have multiple websites open.
 
-![favicon](assets/readme_images/Helldivers_favicon.png)
+![favicon](assets/Readme_images/Helldivers_favicon.png)
 
 ## Quiz
 
