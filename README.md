@@ -123,14 +123,19 @@ Testing was focused on accessibility everyone
 
 ### Functional Testing
 
-| Test                | Steps                                    | Expected                                                      |
-| ------------------- | ---------------------------------------- | ------------------------------------------------------------- |
-| Start Game          | Click Start Game                         | The game starts and firstquestion is loaded                   |
-| Select Answer       | Click an answer                          | The answer is highlighted                                     |
-| Next question       | Click Next                               | The next question and answers is loaded                       |
-| Select Wrong answer | Click a wrong answer                     | the wrong Answer get highlighted red and correct answer Green |
-| Score               | Click next when last question is answerd | Shows score and array message                                 |
-| Restart game        | Click restart quiz                       | First questions and answers is loaded 
+| Test                | Steps                                                                                                                        | Expected                                                                                            | Actual |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------ |
+| Page load           | Load page (https://oscarbackman92.github.io/CI-PP2-OScar-B-ckman/)                                                           | Loads pages and background/logo/intro and instructions loads with startbutton                       | Pass   |
+| Start Game          | Click Start Game                                                                                                             | The game starts and first question is loaded                                                        | Pass   |
+| Quiz starts         | Number 1 questions shows                                                                                                     | 1\. Main objective in Helldivers 2? is loaded                                                       | Pass   |
+| Select Answer       | Click an answer                                                                                                              | The answer is highlighted green for correct                                                         | Pass   |
+| Select Wrong answer | Click a wrong answer                                                                                                         | The incorrect answer is highlighted red together with all incorrect answers and correct being green | Pass   |
+| Next question       | Click Next                                                                                                                   | Number 2 question with answers is loaded                                                            | Pass   |
+| Score               | Click next when last question is answerd                                                                                     | Shows score and array message                                                                       | Pass   |
+| Restart game        | Click restart quiz                                                                                                           | First questions and answers is loaded                                                               | Pass   |
+| Hover Testing       | Hover over start/next and restart                                                                                            | Hovering over the buttons should add color #222                                                     | Pass   |
+| Footer icon         | Click github icon in footer                                                                                                  | Opens in new tab to [https://github.com/OscarBackman92](https://github.com/OscarBackman92) profile  | Pass   |
+| 404 Error page      | Go to url [https://oscarbackman92.github.io/CI-PP2-OScar-B-ckman/1](https://oscarbackman92.github.io/CI-PP2-OScar-B-ckman/1) | Opens up 404 page with message and a return button                                                  | Pass   |
 
 ### Version Control
 
