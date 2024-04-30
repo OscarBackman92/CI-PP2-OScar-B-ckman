@@ -167,7 +167,6 @@ let score = 0;
 document.addEventListener("DOMContentLoaded", function () {
   var appDiv = document.querySelector(".app");
   appDiv.style.display = "none";
-  console.log(".app div is now hidden");
 
   var startBtn = document.createElement("button");
   startBtn.textContent = "Start";
@@ -199,7 +198,6 @@ function startGame() {
   quizDiv.style.display = "block";
   appDiv.style.display = "block";
 
-  console.log("Game started");
 
   displayQuestion();
 }
@@ -210,7 +208,6 @@ function startGame() {
  * Adds event listeners to answer buttons to handle answer selection.
  */
 function displayQuestion() {
-  console.log("Displaying question");
   let currentQuestion = questions[currentQuestionIndex];
   let questionNumber = currentQuestionIndex + 1;
   questionElement.textContent = questionNumber + ". " + currentQuestion.question;
@@ -231,7 +228,6 @@ function displayQuestion() {
   nextButton.disabled = true;
   nextButton.style.display = "none";
 
-  console.log("Answer buttons created");
 }
 
 
@@ -257,37 +253,28 @@ function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
 
-  console.log("Selected answer:", selectedBtn.textContent);
-  console.log("Is correct:", isCorrect);
-
   if (isCorrect) {
-    console.log("Selected answer is correct");
     selectedBtn.classList.add("correct");
     score++;
   } else {
-    console.log("Selected answer is incorrect");
     selectedBtn.classList.add("incorrect");
 
     // Find and highlight the correct answer
     Array.from(answerButtons.children).forEach(button => {
       if (button.dataset.correct === "true") {
-        console.log("Correct answer:", button.textContent);
         button.classList.add("correct");
       } else {
-        console.log("Incorrect answer:", button.textContent);
         button.classList.add("incorrect");
       }
     });
   }
 
   // Disable all buttons after selection
-  console.log("Disabling all answer buttons");
   Array.from(answerButtons.children).forEach(button => {
     button.disabled = true;
   });
 
   // Enable the next button
-  console.log("Enabling the next button");
   nextButton.disabled = false;
   nextButton.style.display = "block";
 }
@@ -296,7 +283,6 @@ function selectAnswer(e) {
  * Resets the state of the quiz, hides the last question, and shows the score categories element.
  */
 function showScore() {
-  console.log("Showing score...");
   resetState(); // Reset the state of the quiz
   const scoreCategoriesElement = document.getElementById("scores-categories");
   const scoreResultElement = scoreCategoriesElement.querySelector("p");
@@ -312,13 +298,11 @@ function showScore() {
   const userScore = score;
   let userMessage = "";
   for (const category of scoreCategories) {
-    console.log("Checking Category:", category);
     if (userScore >= category.minScore && userScore <= category.maxScore) {
       userMessage = "You scored " + userScore + (userScore === 1 ? " point." : " points.") + " " + category.message;
       break; // Stop the loop as soon as the appropriate message is found
     }
   }
-  console.log("Final user message:", userMessage);
 
   // Display the result message
   scoreResultElement.textContent = userMessage;
@@ -353,7 +337,6 @@ function handleNextButton() {
  * When clicked, it restarts the quiz by calling the restartGame function.
  */
 function addRestartButton() {
-  console.log("Adding Restart Quiz button...");
   const restartButton = document.createElement("button");
   restartButton.textContent = "Restart Quiz";
   restartButton.classList.add("btn"); // Add "btn" class for styling
@@ -367,7 +350,6 @@ function addRestartButton() {
  * displaying the first question, and hiding the score categories element.
  */
 function restartGame() {
-  console.log("Restarting game...");
   currentQuestionIndex = 0;
   score = 0;
   
