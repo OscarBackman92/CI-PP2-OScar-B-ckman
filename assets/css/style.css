@@ -8,22 +8,21 @@
     box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
 }
-/* Header img */
+
 header img {
     width: 275px;
     margin-top: 20px;
 }
 
-/*Body styling */
 body {
     background: rgb(6, 46, 97) url(../images/Helldivers_2_Background_image.jpeg) center top/cover no-repeat fixed;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
     color: #16074d;
     min-height: 100vh;
-    padding: 20px;
+    padding: 20px 20px 90px;
 }
-/* Intro styling */
+
 #intro {
     background: #ecd56f;
     width: 90%;
@@ -34,11 +33,6 @@ body {
     font-size: 15px;
 }
 
-/* General list styling */
-li {
-    list-style-type: none;
-}
-/* Instructions styling */
 #quiz-instructions {
     margin-top: 10px;
     margin-left: auto;
@@ -47,7 +41,7 @@ li {
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
-    padding: 20px; 
+    padding: 20px;
     text-align: center;
     font-size: 11px;
 }
@@ -57,22 +51,22 @@ li {
     border-bottom: 1px solid black;
     margin-bottom: 5px;
 }
-/* Instructions Ol styling */
-#instructions ol {
-    list-style: none; 
+
+#instructions-list {
+    list-style: none;
     padding-left: 0;
     margin: 0;
 }
 
-/* instructions list styling */
-
-#instructions li {
+#instructions-list li {
     margin-bottom: 10px;
-    padding-left: 0; 
     text-align: center;
 }
 
-/* Quiz app styling */
+#start-container {
+    margin-top: 10px;
+}
+
 .app {
     background: #ecd56f;
     width: 90%;
@@ -82,7 +76,6 @@ li {
     padding: 30px;
 }
 
-/* app header styling */
 .app h1 {
     font-size: 25px;
     color: #001e4d;
@@ -93,7 +86,6 @@ li {
 
 .quiz {
     padding: 20px 0;
-
 }
 
 .quiz h2 {
@@ -102,7 +94,6 @@ li {
     font-weight: 600;
 }
 
-/* button styling */
 .btn {
     width: 100%;
     padding: 10px;
@@ -111,7 +102,7 @@ li {
     text-align: left;
     margin: 10px 0;
     color: #ffffff;
-    background-color: #2c3e50; 
+    background-color: #2c3e50;
     border: 1px solid #27ae60;
     border-radius: 4px;
     cursor: pointer;
@@ -128,7 +119,8 @@ li {
     cursor: no-drop;
 }
 
-#next-btn, #start-btn, #restart-btn {
+.action-btn,
+.error-backbutton {
     background: #2c3e50;
     color: #ffffff;
     font-weight: bold;
@@ -139,22 +131,15 @@ li {
     border-radius: 4px;
     cursor: pointer;
     display: block;
+    text-decoration: none;
 }
 
-.next-btn {
-    background: #2c3e50;
-    color: #ffffff;
-    font-weight: bold;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px auto;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
+.action-btn:hover,
+.error-backbutton:hover {
+    background: #222;
+    color: #fff;
 }
 
-/* Javascript button styling */
 .correct {
     background: green;
 }
@@ -167,21 +152,6 @@ li {
     display: none;
 }
 
-/* 404 page button styling */
-.error-backbutton {
-    background: #2c3e50;
-    color: #ffffff;
-    font-weight: bold;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px auto;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-}
-
-/* keeps footer on bottom styling */
 footer {
     position: fixed;
     bottom: 0;
@@ -193,23 +163,6 @@ footer {
     text-align: center;
 }
 
-.footer {
-    padding: 20px 0;
-    background-color: #ecd56f;
-    display: flex;
-    justify-content: center;
-
-}
-li::marker {
-    unicode-bidi: normal;
-    font-variant-numeric: normal;
-    text-transform: none;
-    text-indent: 0;
-    text-align: left;
-    text-align-last: auto;
-}
-
-/* error page styling */
 .error-page {
     background: #ecd56f;
     width: 90%;
@@ -219,40 +172,28 @@ li::marker {
     padding: 30px;
 }
 
-/* media queries for smaller screens */
-
 @media screen and (max-width: 600px) {
     .app {
-      padding: 5px; /* Reduce padding for smaller screens */
+        padding: 5px;
     }
-  
-    .btn {
-      font-size: 12px; /* Decrease button font size for smaller screens */
-      text-align: center;
-    }
-  }
 
-/* media query for larger screens */
+    .btn {
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
 @media screen and (min-width: 768px) {
     header img {
         width: 512px;
         height: 130px;
-    }
-    /* General list styling larger screens */
-    li {
-        list-style-type: none;
-    }
-    #instructions ol {
-        list-style: none; 
-        padding-left: 0;
-        margin: 0;
     }
 
     #intro {
         font-size: 18px;
     }
 
-    #instructions {
+    #instructions-list {
         font-size: 15px;
     }
 }

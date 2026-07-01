@@ -55,7 +55,7 @@ This is a quiz about my new favorite game, Helldivers 2 by Arrowhead.
 * GitHub
     * Source code is hosted on GitHub and deployed using Git Pages.
 * Git 
-    * Used to commit and push code during the development opf the Website
+    * Used to commit and push code during the development of the Website
 * Font Awesome
     * Icons obtained from https://fontawesome.com/ were used as the Social media links in the footer section. 
 * Favicon.io
@@ -78,7 +78,7 @@ Steps i went through for testing
 Expected outcome:
 
 The site is responsive on all screen sizes. Hero image not being pixelated/blurry
-Some horizontal is present and that's the idea.
+Some horizontal scroll is present and that's the idea.
 
 Result:
 
@@ -147,7 +147,7 @@ Testing was focused on accessibility everyone
 
 ### Version Control
 
-The site was created using the Visual Studio code editor and pushed to github to the remote repository ‘tacos-travels’.
+The site was created using the Visual Studio code editor and pushed to GitHub in the remote repository `CI-PP2-OScar-B-ckman`.
 
 The following git commands were used throughout development to push code to the remote repo:
 

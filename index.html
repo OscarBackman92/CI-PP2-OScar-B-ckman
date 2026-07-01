@@ -4,75 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta tags for search engines -->
-    <meta name="description" content="A helldiver 2 online quiz">
-    <meta name="keywords" content="quiz, helldiver2, game, co-op, PC, playstation">
-    <!--Quiz Title-->
-    <title>HellDivers 2 Quiz!</title>
-    <!--Stylesheet-->
+    <meta name="description" content="A Helldivers 2 online quiz">
+    <title>Helldivers 2 Quiz!</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--Favicon-->
     <link rel="icon" href="assets/images/favicon.ico">
-
+    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <main>
-        <!--Logo-->
-        <header id="logo"><img src="assets/images/Helldivers_2_logo.png" alt="Helldiver2-logo" aria-label="Helldivers2-logo"></header>
-        <!-- Intro to quiz -->
+        <header id="logo">
+            <img src="assets/images/Helldivers_2_logo.png" alt="Helldivers 2 logo">
+        </header>
         <div id="intro">
             <p>Welcome to the Helldivers 2 Quiz, recruits! Get ready to prove yourself in the galactic arena.
-                 From alien skirmishes to weapon expertise, Helldivers 2 sets the bar high. 
+                From alien skirmishes to weapon expertise, Helldivers 2 sets the bar high.
                 Ready to join humanity's defenders? Let's find out!
             </p>
         </div>
-        <!-- instructions for quiz-->
         <div id="quiz-instructions">
             <h3>Instructions</h3>
-            <ul>
-                <li id="instructions">
-                    <ol>
-                        <li>Test your Helldivers 2 knowledge in this quiz.</li>
-                        <li>Answer 15 questions correctly.</li>
-                        <li>Read each question and select the correct answer.</li>
-                        <li>Click your answer choice.</li>
-                        <li>Earn one point for each correct answer.</li>
-                        <li>Your final score will be displayed at the end.</li>
-                        <li>Use "Next" to move forward.</li>
-                        <li>Restart anytime using "Restart Quiz".</li>
-                        <li>Are you ready to defend humanity?</li>
-                    </ol>
-                </li>
-            </ul>
+            <ol id="instructions-list">
+                <li>Test your Helldivers 2 knowledge in this quiz.</li>
+                <li>Answer all 15 questions to complete the quiz.</li>
+                <li>Read each question and select the correct answer.</li>
+                <li>Click your answer choice.</li>
+                <li>Earn one point for each correct answer.</li>
+                <li>Your final score will be displayed at the end.</li>
+                <li>Use "Next" to move forward.</li>
+                <li>Restart anytime using "Restart Quiz".</li>
+                <li>Are you ready to defend humanity?</li>
+            </ol>
+            <div id="start-container"></div>
         </div>
-        <!--Main quiz app-->
-        <div class="app">
+        <div class="app" hidden>
             <h1>Helldivers 2 Quiz!</h1>
             <div class="quiz">
-                <h2 id="question">Question here</h2>
-                <div id="answer-buttons">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
-                </div>
-                <!--Scores for app-->
-                <div id="scores-categories">
+                <h2 id="question" aria-live="polite"></h2>
+                <div id="answer-buttons" role="group" aria-labelledby="question"></div>
+                <div id="scores-categories" aria-live="polite">
                     <h3>Result:</h3>
                     <p></p>
                 </div>
-                <button id="next-btn">Next</button>
+                <button id="next-btn" class="action-btn" type="button" hidden>Next</button>
             </div>
         </div>
     </main>
-    <!-- Footer -->
     <footer>
-        <a href="https://github.com/OscarBackman92" target="_blank" rel="noopener" aria-label="Oscar Bäckman github"><i class="fa-brands fa-github"></i></a>
+        <a href="https://github.com/OscarBackman92" target="_blank" rel="noopener"
+            aria-label="Oscar Bäckman GitHub profile"><i class="fa-brands fa-github"></i></a>
     </footer>
-    <!-- Scripts -->
     <script src="assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
