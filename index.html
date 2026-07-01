@@ -16,6 +16,7 @@
         <header id="logo">
             <img src="assets/images/Helldivers_2_logo.png" alt="Helldivers 2 logo">
         </header>
+        <h1 id="page-title">Helldivers 2 Quiz!</h1>
         <div id="intro">
             <p>Welcome to the Helldivers 2 Quiz, recruits! Get ready to prove yourself in the galactic arena.
                 From alien skirmishes to weapon expertise, Helldivers 2 sets the bar high.
@@ -23,36 +24,44 @@
             </p>
         </div>
         <div id="quiz-instructions">
-            <h3>Instructions</h3>
+            <h2>Instructions</h2>
             <ol id="instructions-list">
                 <li>Test your Helldivers 2 knowledge in this quiz.</li>
-                <li>Answer all 15 questions to complete the quiz.</li>
+                <li>Answer as many of the 15 questions correctly as you can.</li>
                 <li>Read each question and select the correct answer.</li>
                 <li>Click your answer choice.</li>
                 <li>Earn one point for each correct answer.</li>
                 <li>Your final score will be displayed at the end.</li>
-                <li>Use "Next" to move forward.</li>
+                <li>Use "Next" to move forward after choosing an answer.</li>
                 <li>Restart anytime using "Restart Quiz".</li>
                 <li>Are you ready to defend humanity?</li>
             </ol>
             <div id="start-container"></div>
         </div>
-        <div class="app" hidden>
-            <h1>Helldivers 2 Quiz!</h1>
-            <div class="quiz">
-                <h2 id="question" aria-live="polite"></h2>
-                <div id="answer-buttons" role="group" aria-labelledby="question"></div>
-                <div id="scores-categories" aria-live="polite">
-                    <h3>Result:</h3>
-                    <p></p>
+        <div class="app" id="quiz-app" hidden>
+            <div id="quiz-status">
+                <p id="progress-text">Question 1 of 15</p>
+                <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                    aria-label="Quiz progress">
+                    <div id="progress-fill"></div>
                 </div>
-                <button id="next-btn" class="action-btn" type="button" hidden>Next</button>
+                <p id="score-text">Score: 0</p>
+            </div>
+            <div id="feedback-status" aria-live="polite" aria-atomic="true"></div>
+            <div class="quiz">
+                <h2 id="question"></h2>
+                <div id="answer-buttons" role="group" aria-labelledby="question"></div>
+                <div id="scores-categories" hidden>
+                    <h2>Result</h2>
+                    <p id="final-score"></p>
+                </div>
+                <button id="next-btn" class="action-btn" type="button" hidden disabled>Next</button>
             </div>
         </div>
     </main>
     <footer>
         <a href="https://github.com/OscarBackman92" target="_blank" rel="noopener"
-            aria-label="Oscar Bäckman GitHub profile"><i class="fa-brands fa-github"></i></a>
+            aria-label="Oscar Bäckman GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
     </footer>
     <script src="assets/js/script.js"></script>
 </body>
