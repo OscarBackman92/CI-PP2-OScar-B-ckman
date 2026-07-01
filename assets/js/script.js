@@ -264,6 +264,7 @@ function displayQuestion() {
   const questionNumber = currentQuestionIndex + 1;
 
   questionAnswered = false;
+  feedbackStatus.classList.remove("sr-only");
   setText(feedbackStatus, "");
   setText(questionElement, `${questionNumber}. ${currentQuestion.question}`);
   setElementHidden(questionElement, false);
@@ -427,6 +428,7 @@ function showScore() {
   setElementHidden(scoreCategoriesElement, false);
   setElementHidden(questionElement, true);
   setText(feedbackStatus, userMessage);
+  feedbackStatus.classList.add("sr-only");
 
   if (progressFill) {
     progressFill.style.width = "100%";
