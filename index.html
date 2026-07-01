@@ -4,26 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="description" content="A Helldivers 2 online quiz">
     <title>Helldivers 2 Quiz!</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=3">
     <link rel="icon" href="assets/images/favicon.ico">
     <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <main>
-        <header id="logo">
+        <header id="logo" class="landing-section">
             <img src="assets/images/Helldivers_2_logo.png" alt="Helldivers 2 logo">
         </header>
-        <h1 id="page-title">Helldivers 2 Quiz!</h1>
-        <div id="intro">
+        <h1 id="page-title" class="landing-section">Helldivers 2 Quiz!</h1>
+        <div id="intro" class="landing-section">
             <p>Welcome to the Helldivers 2 Quiz, recruits! Get ready to prove yourself in the galactic arena.
                 From alien skirmishes to weapon expertise, Helldivers 2 sets the bar high.
                 Ready to join humanity's defenders? Let's find out!
             </p>
         </div>
-        <div id="quiz-instructions">
+        <div id="quiz-instructions" class="landing-section">
             <h2>Instructions</h2>
             <ol id="instructions-list">
                 <li>Test your Helldivers 2 knowledge in this quiz.</li>
@@ -40,12 +43,12 @@
         </div>
         <div class="app" id="quiz-app" hidden>
             <div id="quiz-status">
-                <p id="progress-text">Question 1 of 15</p>
+                <p id="progress-text" aria-live="polite">Question 1 of 15</p>
                 <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
                     aria-label="Quiz progress">
                     <div id="progress-fill"></div>
                 </div>
-                <p id="score-text">Score: 0</p>
+                <p id="score-text" aria-live="polite">Score: 0</p>
             </div>
             <div id="feedback-status" aria-live="polite" aria-atomic="true"></div>
             <div class="quiz">
@@ -63,7 +66,7 @@
         <a href="https://github.com/OscarBackman92" target="_blank" rel="noopener"
             aria-label="Oscar Bäckman GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js?v=3"></script>
 </body>
 
 </html>

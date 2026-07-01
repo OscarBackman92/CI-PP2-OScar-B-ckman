@@ -176,44 +176,52 @@ const questions = [
 
 const TOTAL_QUESTIONS = questions.length;
 
-const questionElement = document.getElementById("question");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
-const appDiv = document.getElementById("quiz-app");
-const startContainer = document.getElementById("start-container");
-const progressText = document.getElementById("progress-text");
-const progressBar = document.getElementById("progress-bar");
-const progressFill = document.getElementById("progress-fill");
-const scoreText = document.getElementById("score-text");
-const feedbackStatus = document.getElementById("feedback-status");
-const quizStatus = document.getElementById("quiz-status");
-const logoHeader = document.getElementById("logo");
-const pageTitle = document.getElementById("page-title");
-
 let currentQuestionIndex = 0;
 let score = 0;
 let questionAnswered = false;
 
-/**
- * Initialises the quiz page only when required elements are present.
- */
-if (appDiv && startContainer && questionElement && answerButtons && nextButton) {
-  const startBtn = document.createElement("button");
-  startBtn.textContent = "Start";
-  startBtn.id = "start-btn";
-  startBtn.className = "action-btn";
-  startBtn.type = "button";
-  startContainer.appendChild(startBtn);
+let questionElement;
+let answerButtons;
+let nextButton;
+let appDiv;
+let startContainer;
+let progressText;
+let progressBar;
+let progressFill;
+let scoreText;
+let feedbackStatus;
+let quizStatus;
+let landingSections;
 
-  startBtn.addEventListener("click", startGame);
-  nextButton.addEventListener("click", handleNextButton);
+/**
+ * Shows or hides an element using both the hidden attribute and a CSS class.
+ */
+function setElementHidden(element, hidden) {
+  if (!element) {
+    return;
+  }
+
+  element.hidden = hidden;
+  element.classList.toggle("u-hidden", hidden);
+  element.setAttribute("aria-hidden", hidden ? "true" : "false");
+}
+
+/**
+ * Updates text content when the target element exists.
+ */
+function setText(element, text) {
+  if (element) {
+    element.textContent = text;
+  }
 }
 
 /**
  * Scrolls the quiz card into view at the top of the viewport.
  */
 function scrollToQuiz() {
-  appDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (appDiv) {
+    appDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 /**
@@ -221,26 +229,27 @@ function scrollToQuiz() {
  */
 function updateProgress() {
   const questionNumber = currentQuestionIndex + 1;
-  const progressPercent = Math.round(
-    ((questionNumber - 1) / TOTAL_QUESTIONS) * 100
-  );
+  const progressPercent = Math.round((questionNumber / TOTAL_QUESTIONS) * 100);
 
-  progressText.textContent = `Question ${questionNumber} of ${TOTAL_QUESTIONS}`;
-  scoreText.textContent = `Score: ${score}`;
-  progressFill.style.width = `${progressPercent}%`;
-  progressBar.setAttribute("aria-valuenow", String(progressPercent));
+  setText(progressText, `Question ${questionNumber} of ${TOTAL_QUESTIONS}`);
+  setText(scoreText, `Score: ${score}`);
+
+  if (progressFill) {
+    progressFill.style.width = `${progressPercent}%`;
+  }
+
+  if (progressBar) {
+    progressBar.setAttribute("aria-valuenow", String(progressPercent));
+  }
 }
 
 /**
  * Hides landing content and shows the quiz view.
  */
 function startGame() {
-  document.getElementById("intro").hidden = true;
-  document.getElementById("quiz-instructions").hidden = true;
-  logoHeader.hidden = true;
-  pageTitle.hidden = true;
+  landingSections.forEach((section) => setElementHidden(section, true));
 
-  appDiv.hidden = false;
+  setElementHidden(appDiv, false);
   appDiv.classList.add("app-active");
 
   displayQuestion();
@@ -255,10 +264,16 @@ function displayQuestion() {
   const questionNumber = currentQuestionIndex + 1;
 
   questionAnswered = false;
-  feedbackStatus.textContent = "";
-  questionElement.textContent = `${questionNumber}. ${currentQuestion.question}`;
-  questionElement.hidden = false;
-  quizStatus.hidden = false;
+  setText(feedbackStatus, "");
+  setText(questionElement, `${questionNumber}. ${currentQuestion.question}`);
+  setElementHidden(questionElement, false);
+  setElementHidden(quizStatus, false);
+  setElementHidden(document.getElementById("scores-categories"), true);
+  setElementHidden(nextButton, true);
+
+  if (nextButton) {
+    nextButton.disabled = true;
+  }
 
   answerButtons.innerHTML = "";
 
@@ -266,7 +281,7 @@ function displayQuestion() {
     const button = document.createElement("button");
     button.classList.add("btn");
     button.type = "button";
-    button.dataset.correct = answer.correct;
+    button.dataset.correct = String(answer.correct);
 
     const answerText = document.createElement("span");
     answerText.className = "answer-text";
@@ -278,9 +293,6 @@ function displayQuestion() {
   });
 
   updateProgress();
-  nextButton.disabled = true;
-  nextButton.hidden = true;
-
   scrollToQuiz();
 }
 
@@ -288,17 +300,24 @@ function displayQuestion() {
  * Adds visible and screen-reader feedback to an answer button.
  */
 function markAnswerButton(button, isCorrect) {
+  if (
+    button.classList.contains("correct") ||
+    button.classList.contains("incorrect")
+  ) {
+    return;
+  }
+
   button.classList.add(isCorrect ? "correct" : "incorrect");
 
   const statusLabel = document.createElement("span");
   statusLabel.className = "answer-status";
   statusLabel.textContent = isCorrect ? "Correct" : "Incorrect";
-  statusLabel.setAttribute("aria-hidden", "true");
   button.appendChild(statusLabel);
 
+  const answerText = button.querySelector(".answer-text");
   button.setAttribute(
     "aria-label",
-    `${button.querySelector(".answer-text").textContent} — ${
+    `${answerText ? answerText.textContent : button.textContent} — ${
       isCorrect ? "Correct" : "Incorrect"
     }`
   );
@@ -318,18 +337,19 @@ function selectAnswer(e) {
 
   if (isCorrect) {
     markAnswerButton(selectedBtn, true);
-    score++;
-    scoreText.textContent = `Score: ${score}`;
-    feedbackStatus.textContent = "Correct answer.";
+    score += 1;
+    setText(scoreText, `Score: ${score}`);
+    setText(feedbackStatus, "Correct answer.");
   } else {
     markAnswerButton(selectedBtn, false);
-    feedbackStatus.textContent = "Incorrect answer. The correct answer is highlighted.";
+    setText(
+      feedbackStatus,
+      "Incorrect answer. The correct answer is highlighted."
+    );
 
     Array.from(answerButtons.children).forEach((button) => {
       if (button.dataset.correct === "true") {
         markAnswerButton(button, true);
-      } else if (button !== selectedBtn) {
-        markAnswerButton(button, false);
       }
     });
   }
@@ -338,19 +358,25 @@ function selectAnswer(e) {
     button.disabled = true;
   });
 
-  nextButton.disabled = false;
-  nextButton.hidden = false;
-  nextButton.focus();
+  if (nextButton) {
+    nextButton.disabled = false;
+    setElementHidden(nextButton, false);
+    nextButton.focus();
+  }
 }
 
 /**
  * Resets answer buttons and hides the next button.
  */
 function resetState() {
-  nextButton.hidden = true;
-  nextButton.disabled = true;
+  setElementHidden(nextButton, true);
+
+  if (nextButton) {
+    nextButton.disabled = true;
+  }
+
   answerButtons.innerHTML = "";
-  feedbackStatus.textContent = "";
+  setText(feedbackStatus, "");
 }
 
 /**
@@ -358,7 +384,8 @@ function resetState() {
  */
 function showScore() {
   resetState();
-  quizStatus.hidden = true;
+  setElementHidden(quizStatus, true);
+  setElementHidden(nextButton, true);
 
   const scoreCategoriesElement = document.getElementById("scores-categories");
   const scoreResultElement = document.getElementById("final-score");
@@ -384,6 +411,7 @@ function showScore() {
 
   const userScore = score;
   let userMessage = "";
+
   for (const category of scoreCategories) {
     if (userScore >= category.minScore && userScore <= category.maxScore) {
       userMessage =
@@ -395,13 +423,18 @@ function showScore() {
     }
   }
 
-  scoreResultElement.textContent = userMessage;
-  scoreCategoriesElement.hidden = false;
-  questionElement.hidden = true;
-  feedbackStatus.textContent = userMessage;
+  setText(scoreResultElement, userMessage);
+  setElementHidden(scoreCategoriesElement, false);
+  setElementHidden(questionElement, true);
+  setText(feedbackStatus, userMessage);
 
-  progressFill.style.width = "100%";
-  progressBar.setAttribute("aria-valuenow", "100");
+  if (progressFill) {
+    progressFill.style.width = "100%";
+  }
+
+  if (progressBar) {
+    progressBar.setAttribute("aria-valuenow", "100");
+  }
 
   addRestartButton();
   scrollToQuiz();
@@ -415,7 +448,8 @@ function handleNextButton() {
     return;
   }
 
-  currentQuestionIndex++;
+  currentQuestionIndex += 1;
+
   if (currentQuestionIndex < questions.length) {
     displayQuestion();
   } else {
@@ -444,6 +478,46 @@ function restartGame() {
   score = 0;
   questionAnswered = false;
 
-  document.getElementById("scores-categories").hidden = true;
+  setElementHidden(document.getElementById("scores-categories"), true);
   displayQuestion();
 }
+
+/**
+ * Initialises the quiz after the DOM is ready.
+ */
+function initQuiz() {
+  questionElement = document.getElementById("question");
+  answerButtons = document.getElementById("answer-buttons");
+  nextButton = document.getElementById("next-btn");
+  appDiv = document.getElementById("quiz-app");
+  startContainer = document.getElementById("start-container");
+  progressText = document.getElementById("progress-text");
+  progressBar = document.getElementById("progress-bar");
+  progressFill = document.getElementById("progress-fill");
+  scoreText = document.getElementById("score-text");
+  feedbackStatus = document.getElementById("feedback-status");
+  quizStatus = document.getElementById("quiz-status");
+  landingSections = Array.from(document.querySelectorAll(".landing-section"));
+
+  if (
+    !appDiv ||
+    !startContainer ||
+    !questionElement ||
+    !answerButtons ||
+    !nextButton
+  ) {
+    return;
+  }
+
+  const startBtn = document.createElement("button");
+  startBtn.textContent = "Start";
+  startBtn.id = "start-btn";
+  startBtn.className = "action-btn";
+  startBtn.type = "button";
+  startContainer.appendChild(startBtn);
+
+  startBtn.addEventListener("click", startGame);
+  nextButton.addEventListener("click", handleNextButton);
+}
+
+document.addEventListener("DOMContentLoaded", initQuiz);
